@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 804px;
+    height: auto;
+    border: 2px solid black;
+}
+
+/* .squares {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+} */
+.container>div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.onhover {
+    background-color: black;
+}
+
+footer {
+    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: small;
+    margin-bottom: 10px;
+
+}
