@@ -10,6 +10,10 @@ function setBg (){
 }
 
 function createGrid(square) {
+  if (isNaN(square) || square < 2 || square > 100) {
+    alert("type number between 2 to 100");
+    return;
+  }
   let divs = sketchArea.querySelectorAll("div");
   divs.forEach((div) => div.remove());
   let numberOfSquares = square * square;
@@ -26,19 +30,12 @@ function createGrid(square) {
   }
 }
 
-
 function changesize (input){
-  if(input >= 2 && input <= 100){
-    createGrid(input);
-  }
-  else {
-    alert("type number between 2 to 100");
-  }
+  createGrid(input);
 }
 createGrid(16);
 
 function reset(){
-  const sketchArea = document.querySelector("#sketch-area");
   const divs = sketchArea.querySelectorAll("div");
   divs.forEach((div) => div.style.backgroundColor = "white")
 }

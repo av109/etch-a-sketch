@@ -57,7 +57,7 @@ input[type="text"] {
   border: none;
   outline: none;
   border-bottom: 0.2em solid var(--color);
-  background: rgba(var(--color), 0.2);
+  background: rgba(66, 113, 152, 0.2); /* Corrected rgba usage */
   border-radius: 0.2em 0.2em 0 0;
   padding: 0.4em;
   color: var(--txtc);
@@ -72,10 +72,11 @@ button {
   color: var(--color);
   border-radius: 2em;
   transition: 1s;
-  &:hover,
-  &:focus,
-  &:active {
-    background: var(--color);
-    color: #fff;
-  }
+}
+
+button:hover,
+button:focus,
+button:active {
+  background: var(--color);
+  color: #fff;
 }
