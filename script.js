@@ -1,26 +1,44 @@
-const container = document.querySelector(".container");
-const valuebtn = document.querySelector("#valuebtn");
-// Get the value from input field
-function createSquare(num) {
-    num = num*8;
-    for (i = 0; i < num; i++) {
-        const div = document.createElement("div");
-        // Add event listener to each div element 
-        div.addEventListener('mouseenter', function() {  // On mouse enter
-            div.classList.add("onhover");  
-        });
+const GRIDSIDE = 600;
+// let square = 16;
 
-        container.appendChild(div)
-    }
+const sketchArea = document.querySelector("#sketch-area");
+sketchArea.style.width = `${GRIDSIDE}px`;
+sketchArea.style.height = `${GRIDSIDE}px`;
+
+function setBg (){
+  this.style.backgroundColor = "rgb(66, 113, 152)";
 }
-valuebtn.addEventListener("click", () => {
-    let square = parseInt(document.querySelector("#numberofSquare").value);
-    if (square > 0) {
-        container.innerHTML = ""; // This line will reset the .container div to an empty state before creating new squares
-        createSquare(square);
-    }
-    else {
-        alert("Error type a number only!");
-    }
 
-})
+function createGrid(square) {
+  let divs = sketchArea.querySelectorAll("div");
+  divs.forEach((div) => div.remove());
+  let numberOfSquares = square * square;
+  let width = `${(GRIDSIDE / square)}px`;
+  for (let i = 0; i < numberOfSquares; i++) {
+    const gridCell = document.createElement("div");
+
+    gridCell.style.width = gridCell.style.height = width;
+    gridCell.classList.add("cell");
+
+    sketchArea.appendChild(gridCell);
+
+    gridCell.addEventListener("mouseover", setBg);
+  }
+}
+
+
+function changesize (input){
+  if(input >= 2 && input <= 100){
+    createGrid(input);
+  }
+  else {
+    alert("type number between 2 to 100");
+  }
+}
+createGrid(16);
+
+function reset(){
+  const sketchArea = document.querySelector("#sketch-area");
+  const divs = sketchArea.querySelectorAll("div");
+  divs.forEach((div) => div.style.backgroundColor = "white")
+}

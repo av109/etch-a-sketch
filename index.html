@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>Etch-a-sketch</h1>
+    </nav>
 
-</head>
+    <main>
+      <div class="container-area">
+        <div class="container" id="sketch-area"></div>
+      </div>
 
-<body>
-    <header>
-        <h1>Etch A Sketch</h1>
-    </header>
-    <section>
-        <div class="inputsection">Enter the number of square you want (22 is recommended): <input type="number" id="numberofSquare"> <button
-                id="valuebtn">Enter/Clear</button></div>
-        <div class="container">
-        </div>
-    </section>
+      <div class="container-area">
+        <input
+          type="text"
+          placeholder="size of board"
+          value="16"
+          onchange="changesize(this.value)"
+        />
+        <button>Set Size</button>
+        <button onclick="reset()"><span class="text">Reset</span></button>
+      </div>
+    </main>
+
     <footer>
-        <p>&#169;
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-            Aayush Vyas | All Rights Reserved
-        </p>
+      <p>
+        &#169;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Aayush Vyas | All Rights Reserved
+      </p>
     </footer>
-
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
